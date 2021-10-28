@@ -9,7 +9,7 @@ import "./Home.css"
 const Home = () => {
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/events')
+        axios.get('https://sk-volunteer.herokuapp.com/events')
             .then(res => setEvents(res.data.events))
             .catch(err => console.log(err))
     }, []);

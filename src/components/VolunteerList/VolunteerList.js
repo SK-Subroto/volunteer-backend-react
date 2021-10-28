@@ -6,13 +6,13 @@ import { Trash } from 'react-bootstrap-icons';
 const VolunteerList = () => {
     const [volunteers, setVolunteers] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/volunteer')
+        axios.get('https://sk-volunteer.herokuapp.com/volunteer')
             .then(res => setVolunteers(res.data))
             .catch(err => console.log(err))
     }, []);
 
     const handleDeleteVolunteer = id => {
-        axios.delete(`http://localhost:5000/volunteer/${id}`)
+        axios.delete(`https://sk-volunteer.herokuapp.com/volunteer/${id}`)
             .then(res => {
                 if (res.data.deletedCount) {
                     const remainingvolunteers = volunteers.filter(volunteer => volunteer._id !== id);

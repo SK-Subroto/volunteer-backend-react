@@ -8,13 +8,13 @@ const MyEvent = () => {
     const { user } = useAuth();
     const [myEvents, setMyEvents] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/volunteer')
+        axios.get('https://sk-volunteer.herokuapp.com/volunteer')
             .then(res => setMyEvents(res.data.filter(d => d.email === user.email)))
             .catch(err => console.log(err))
     }, []);
 
     const handleDelete = id => {
-        axios.delete(`http://localhost:5000/volunteer/${id}`)
+        axios.delete(`https://sk-volunteer.herokuapp.com/volunteer/${id}`)
             .then(res => {
                 if (res.data.deletedCount) {
                     const remainingEvents = myEvents.filter(event => event._id !== id);

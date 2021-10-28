@@ -18,7 +18,7 @@ const EventRegistration = () => {
     const dateRef = useRef('');
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/events/${id}`)
+        axios.get(`https://sk-volunteer.herokuapp.com/events/${id}`)
             .then(res => {
                 setEvent(res.data);
             })
@@ -35,7 +35,7 @@ const EventRegistration = () => {
         const img = event.img;
         const data = { name, email, date, purpose, title, description, img }
 
-        axios.post('http://localhost:5000/volunteer', data)
+        axios.post('https://sk-volunteer.herokuapp.com/volunteer', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert("successfully added");

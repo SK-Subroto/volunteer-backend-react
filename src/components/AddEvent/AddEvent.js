@@ -14,7 +14,7 @@ const AddEvent = () => {
         const description = descriptionRef.current.value;
         const img = imgUrlRef.current.value;
         const data = { title, date, description, img };
-        axios.post('http://localhost:5000/events', data)
+        axios.post('https://sk-volunteer.herokuapp.com/events', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('successfully added');

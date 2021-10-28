@@ -3,12 +3,10 @@
 
 ## Live link:
 
-https://sk-diagnostic.web.app/
+https://volunteer-network-f37db.web.app/
 
 ### About this project
 
-- This is a medical diagnostic site.
+- This is a volunteer network site.
 - User can registration and login to this site
-- User can apply for diagnostic labouratory test.
-- using this site parient can give sample from home.
-- This website is mobile responsive.
+- User can apply for volunteer.
