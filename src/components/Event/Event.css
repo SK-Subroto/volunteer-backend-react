@@ -1,0 +1,17 @@
+.event-img{
+    height: 250px;
+    width: 650px;
+}
+.event-title{
+    /* background-color: #FFBD3E; */
+    color: #FFFFFF;
+    font-weight: 700;
+    border-radius: 0 0 10px 10px;
+    /* line-height: 40px; */
+    font-size: 18px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

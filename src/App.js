@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Admin from './components/Admin/Admin';
+import EventRegistration from './components/EventRegistration/EventRegistration';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Register from './components/Register/Register';
+import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyEvent from './components/MyEvent/MyEvent';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Router>
+          {/* <Header /> */}
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <PrivateRoute path="/event-register/:id">
+              <EventRegistration />
+            </PrivateRoute>
+            <PrivateRoute path="/my-event">
+              <MyEvent />
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
+              <Admin />
+            </PrivateRoute>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
